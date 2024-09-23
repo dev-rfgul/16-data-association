@@ -4,7 +4,10 @@ const mongoose = require('mongoose');
 
 const postSchema=new mongoose.Schema({
     postData: String,
-    user:String,
+    user:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'user',
+    },
     date:{
         type:Date,
         date:Date.now()
